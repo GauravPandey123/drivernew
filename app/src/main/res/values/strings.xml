@@ -45,4 +45,6 @@
     <string name="inprocess">In Process</string>
     <string name="order_history">Order History</string>
     <string name="error_mobile_no">Please Enter Mobile Number</string>
+    <string name="err_msg_password">Please Enter Password]</string>
+    <string name="error_driver_id">Please Enter Driver Id</string>
 </resources>

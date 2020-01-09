@@ -21,9 +21,9 @@ import kotlinx.android.synthetic.main.login_fragment.*
 
 class LoginFragment : Fragment(), NavController.OnDestinationChangedListener {
 
-    private lateinit var mobieNo : String
-    private lateinit var driverId : String
-    private lateinit var password : String
+    private lateinit var mobieNo: String
+    private lateinit var driverId: String
+    private lateinit var password: String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,9 +63,23 @@ class LoginFragment : Fragment(), NavController.OnDestinationChangedListener {
         })
     }
 
-    private fun phone(): Boolean {
+    private fun submitForn() {
+        if (!validatephone()) {
+            return
+        }
+
+        if (!validatePassword()) {
+            return
+        }
+
+        if (validateDriverId()) {
+            return
+        }
+    }
+
+    private fun validatephone(): Boolean {
         mobieNo = editTextMobileNo.text.toString().trim()
-        if (mobieNo.isEmpty() ) {
+        if (mobieNo.isEmpty()) {
             textInputLayoutMobileNo.error = getString(R.string.error_mobile_no)
             requestFocus(textInputLayoutMobileNo)
         } else {
@@ -75,12 +89,12 @@ class LoginFragment : Fragment(), NavController.OnDestinationChangedListener {
     }
 
     private fun validatePassword(): Boolean {
-        if (textInputPasswordEdittext.text.toString().trim().isEmpty()) {
-            password_textInputLayout.error = getString(R.string.err_msg_password)
-            requestFocus(textInputPasswordEdittext)
+        if (editTextPassowrd.text.toString().trim().isEmpty()) {
+            textInputLayoutPassword.error = getString(R.string.err_msg_password)
+            requestFocus(textInputLayoutPassword)
             return false
         } else {
-            password_textInputLayout.isErrorEnabled = false
+            textInputLayoutPassword.isErrorEnabled = false
         }
 
         return true
@@ -89,14 +103,15 @@ class LoginFragment : Fragment(), NavController.OnDestinationChangedListener {
 
     private fun validateDriverId(): Boolean {
         if (editTestEmloyeeId.text.toString().trim().isEmpty()) {
-            textInputLayoutEmpId
-        }else{
+            textInputLayoutEmpId.error = getString(R.string.error_driver_id)
+            requestFocus(textInputLayoutEmpId)
+            return false
+        } else {
+            textInputLayoutEmpId.isErrorEnabled = false
 
         }
-    }
+        return true
 
-    private fun isValidEmail(): Boolean {
-        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 
 
@@ -105,8 +120,6 @@ class LoginFragment : Fragment(), NavController.OnDestinationChangedListener {
             activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
         }
     }
-
-
 
 
     private fun setUpElements() {
