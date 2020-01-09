@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_8dp"
+    app:cardCornerRadius="@dimen/_4dp"
+    app:cardElevation="@dimen/_8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_4dp">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutCard"
+            android:layout_width="@dimen/_120dp"
+            android:layout_height="@dimen/_120dp"
+            android:background="@color/grey2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imagevIewCardView"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_placeholder" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textViewOrderName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:drawableStart="@drawable/ic_order"
+            android:drawableLeft="@drawable/ic_order"
+            android:paddingTop="@dimen/_4dp"
+            android:drawablePadding="@dimen/_8dp"
+            android:text="@string/product_name"
+            android:textSize="@dimen/font_sixteen"
+            app:layout_constraintStart_toEndOf="@+id/relativeLayoutCard"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewOrderLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/relativeLayoutCard"
+            android:paddingTop="@dimen/_4dp"
+            android:drawablePadding="@dimen/_8dp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:text="@string/location"
+            android:drawableStart="@drawable/ic_order_location"
+            app:layout_constraintTop_toBottomOf="@+id/textViewOrderName"
+            android:drawableLeft="@drawable/ic_order_location" />
+
+        <TextView
+            android:id="@+id/textViewOrderStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/relativeLayoutCard"
+            android:paddingTop="@dimen/_4dp"
+            android:drawablePadding="@dimen/_8dp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:text="@string/location"
+            android:drawableStart="@drawable/ic_order_status"
+            app:layout_constraintTop_toBottomOf="@+id/textViewOrderLocation"
+            android:drawableLeft="@drawable/ic_order_status" />
+
+        <TextView
+            android:id="@+id/textViewScheduleTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/scheduletime"
+            android:drawablePadding="@dimen/_8dp"
+            android:drawableStart="@drawable/ic_schedule"
+            android:paddingTop="@dimen/_8dp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            app:layout_constraintStart_toEndOf="@+id/relativeLayoutCard"
+            app:layout_constraintTop_toBottomOf="@+id/textViewOrderStatus"
+            android:drawableLeft="@drawable/ic_schedule" />
+
+        <TextView
+            android:id="@+id/textViewTotalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/total_price"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

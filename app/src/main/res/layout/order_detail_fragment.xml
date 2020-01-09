@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/reativeLayoutBack"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80dp"
+            android:background="@color/colorAccent"
+
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageViewOrderBack"
+                android:layout_width="@dimen/_24dp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginLeft="@dimen/_12sdp"
+                android:src="@drawable/ic_order_detail_back" />
+
+            <TextView
+                android:id="@+id/textViewOrderId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginLeft="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_20dp"
+                android:layout_toEndOf="@+id/imageViewOrderBack"
+                android:layout_toRightOf="@+id/imageViewOrderBack"
+                android:text="@string/pickup"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewOrderId"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginLeft="@dimen/_12sdp"
+                android:layout_toEndOf="@+id/imageViewOrderBack"
+                android:layout_toRightOf="@+id/imageViewOrderBack"
+                android:text="@string/date"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_sixteen" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textViewSchedueTimetext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_60dp"
+            android:layout_marginLeft="@dimen/_60dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:text="@string/scheduledtime"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/font_20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reativeLayoutBack" />
+
+        <TextView
+            android:id="@+id/textViewSchduleTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10dp"
+            android:layout_marginLeft="@dimen/_10dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:text="3:00-4:00 PM"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/font_20sp"
+            app:layout_constraintStart_toEndOf="@+id/textViewSchedueTimetext"
+            app:layout_constraintTop_toBottomOf="@+id/reativeLayoutBack" />
+
+        <TextView
+            android:id="@+id/textViewPickBuisnessDetail"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_margin="@dimen/_10dp"
+            android:layout_marginLeft="@dimen/_10dp"
+            android:layout_marginTop="@dimen/_4dp"
+            android:layout_marginRight="@dimen/_10dp"
+            android:layout_marginBottom="@dimen/_4dp"
+            android:background="@color/grey6"
+            android:paddingTop="@dimen/_8dp"
+            android:paddingBottom="@dimen/_4dp"
+            android:text="@string/pickupbusiness"
+            android:textSize="@dimen/font_20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSchedueTimetext" />
+
+
+        <ImageView
+            android:id="@+id/imageViewProductImage"
+            android:layout_width="@dimen/_24dp"
+            android:layout_height="@dimen/_24dp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20dp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:src="@drawable/ic_prodtc_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPickBuisnessDetail" />
+
+        <TextView
+            android:id="@+id/textViewVendorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10dp"
+            android:layout_marginLeft="@dimen/_10dp"
+            android:layout_marginTop="@dimen/_20dp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:gravity="center_vertical"
+            android:text="@string/vedorname"
+            android:textSize="@dimen/font_20sp"
+            app:layout_constraintStart_toEndOf="@+id/imageViewProductImage"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPickBuisnessDetail" />
+
+        <View
+            android:id="@+id/viewVendorName"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="@dimen/_10dp"
+            android:background="@color/grey3"
+            app:layout_constraintTop_toBottomOf="@+id/textViewVendorName" />
+
+        <ImageView
+            android:id="@+id/imageViewVedorMobile"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_24dp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20dp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:src="@drawable/ic_phone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewVendorName" />
+
+        <TextView
+            android:id="@+id/textViewVendorMobileNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20dp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:text="@string/mobilno"
+            android:textSize="@dimen/font_20sp"
+            app:layout_constraintStart_toEndOf="@+id/imageViewVedorMobile"
+            app:layout_constraintTop_toBottomOf="@+id/viewVendorName" />
+
+        <ImageView
+            android:id="@+id/imageViewVendorPhone"
+            android:layout_width="@dimen/_24dp"
+            android:layout_height="@dimen/_24dp"
+            android:layout_margin="@dimen/_20sdp"
+            android:src="@drawable/ic_call_answer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewVendorName" />
+
+        <View
+            android:id="@+id/viewVendorMobile"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="@dimen/_10dp"
+            android:background="@color/grey3"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewVedorMobile" />
+
+        <ImageView
+            android:id="@+id/imageviewVendorLocation"
+            android:layout_width="@dimen/_24dp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_margin="@dimen/_20sdp"
+            android:src="@drawable/ic_location_delivery"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewVendorMobile" />
+
+        <TextView
+            android:id="@+id/textViewVendorAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_20sp"
+            android:text="@string/location"
+            android:layout_margin="@dimen/_20sdp"
+            app:layout_constraintStart_toEndOf="@+id/imageviewVendorLocation"
+            app:layout_constraintTop_toBottomOf="@+id/viewVendorMobile"/>
+
+        <View
+            android:id="@+id/viewVendorLocation"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="@dimen/_10dp"
+            android:background="@color/grey3"
+            app:layout_constraintTop_toBottomOf="@+id/imageviewVendorLocation" />
+
+        <TextView
+            android:id="@+id/textViewPickCustomerDetail"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_margin="@dimen/_10dp"
+            android:layout_marginLeft="@dimen/_10dp"
+            android:layout_marginTop="@dimen/_4dp"
+            android:layout_marginRight="@dimen/_10dp"
+            android:layout_marginBottom="@dimen/_4dp"
+            android:background="@color/grey6"
+            android:paddingTop="@dimen/_8dp"
+            android:paddingBottom="@dimen/_4dp"
+            android:text="@string/pickupbusiness"
+            android:textSize="@dimen/font_20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSchedueTimetext" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

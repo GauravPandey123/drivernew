@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:text="@string/scheduletime"
+        android:textColor="@color/white"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/_20sdp"
+        android:textSize="@dimen/font_20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/colorAccent"
+        android:paddingLeft="@dimen/_20sdp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

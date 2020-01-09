@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/notification_fragment"
+    app:startDestination="@id/nav_notification">
+
+    <fragment
+        android:id="@+id/nav_notification"
+        android:name="com.augrocerrydelivery.ui.fragment.NotificationFragment"
+        android:label="@string/notification"
+        tools:layout="@layout/notification_fragment">
+
+
+        <action
+            android:id="@+id/notificationdetail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+
+</navigation>

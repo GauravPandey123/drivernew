@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_login"
+    app:startDestination="@+id/nav_login_fragment">
+
+
+    <fragment
+        android:id="@+id/nav_login_fragment"
+        android:name="com.augrocerrydelivery.ui.fragment.LoginFragment"
+        android:label="fragment_launcher"
+        tools:layout="@layout/login_fragment">
+
+        <action
+            android:id="@+id/action_launcherFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+
+        <action
+            android:id="@+id/action_launcherFragment_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+
+        <action
+            android:id="@+id/action_launcherFragment_to_otpfragment"
+            app:destination="@id/otpfragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.augrocerrydelivery.ui.fragment.ForgotPasswordFragment"
+        android:label="fragment_forgot_password"
+        tools:layout="@layout/forgot_passoword_fragment" />
+
+
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.augrocerrydelivery.ui.fragment.ResetPasswordFragment"
+        android:label="fragement_reset_password_fragment"
+        tools:layout="@layout/reset_password_fragment" />
+
+
+    <fragment
+        android:id="@+id/otpfragment"
+        android:name="com.augrocerrydelivery.ui.fragment.OtpFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/otp_fragment" />
+
+
+</navigation>
