@@ -47,4 +47,9 @@
     <string name="error_mobile_no">Please Enter Mobile Number</string>
     <string name="err_msg_password">Please Enter Password]</string>
     <string name="error_driver_id">Please Enter Driver Id</string>
+    <string name="pleasecheckinternet">Please CHeck Internet Connection</string>
+    <string name="name">Name</string>
+    <string name="emp_id">emp_id</string>
+    <string name="total_order_no">Total Order</string>
+    <string name="total_no_orders">Total No Of Orders</string>
 </resources>

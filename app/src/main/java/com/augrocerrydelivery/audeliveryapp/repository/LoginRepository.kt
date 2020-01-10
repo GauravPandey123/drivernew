@@ -22,7 +22,7 @@ class LoginRepository {
             val request = loginUser(loginRequest)
             request.onSuccess {
                 withContext(Dispatchers.Main) {
-                    if (it.success!! && it.user != null) {
+                    if (it.success && it.user != null) {
                         saveUserData(it)
                     }
 

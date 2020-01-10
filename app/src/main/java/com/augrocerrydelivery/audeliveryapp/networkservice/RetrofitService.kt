@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit
 
 class RetrofitService {
     companion object {
-        private const val BASE_URL = "https://adsandurlapp.com/driverapp"
+        private const val BASE_URL = "https://adsandurlapp.com/driverapp/"
     }
 
     private fun getClient(): OkHttpClient {

@@ -1,4 +1,4 @@
-package com.augrocerrydelivery.ui.activity
+package com.augrocerrydelivery.audeliveryapp.ui.activity
 
 import android.os.Bundle
 import android.os.PersistableBundle

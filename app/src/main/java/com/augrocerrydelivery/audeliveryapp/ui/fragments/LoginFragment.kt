@@ -15,9 +15,13 @@ import androidx.navigation.fragment.findNavController
 import com.augrocerrydelivery.audeliveryapp.R
 import com.augrocerrydelivery.audeliveryapp.model.login.LoginRequest
 import com.augrocerrydelivery.audeliveryapp.model.login.response.LoginResponse
+import com.augrocerrydelivery.audeliveryapp.ui.utils.isOnline
+import com.augrocerrydelivery.audeliveryapp.ui.utils.showSnackbar
 import com.augrocerrydelivery.audeliveryapp.viewmodel.LoginViewModel
+import com.google.android.material.snackbar.Snackbar
 
 import kotlinx.android.synthetic.main.login_fragment.*
+import java.util.*
 
 class LoginFragment : Fragment(), NavController.OnDestinationChangedListener {
 
@@ -48,15 +52,40 @@ class LoginFragment : Fragment(), NavController.OnDestinationChangedListener {
         super.onViewCreated(view, savedInstanceState)
 
         setUpElements()
+        setUpListeners()
         //  setUpObservers()
+    }
+
+    private fun setUpListeners() {
+        textViewLogin.setOnClickListener {
+            context?.isOnline()?.let {
+                if (it) {
+                    submitForn()
+                } else {
+                    nestedScrollViewLogin.showSnackbar(
+                            resources.getString(R.string.pleasecheckinternet),
+                            Snackbar.LENGTH_SHORT
+                    )
+                }
+            }
+        }
     }
 
     private fun setUpObservers(phoneNo: String, image: String, driverId: String, password: String, lattiude: String, logitude: String, fcmToken: String, language: String) {
         val request = LoginRequest(phoneNo, image, driverId, password, lattiude, logitude, fcmToken, language)
+        contatinProgresBarLogin.visibility = View.VISIBLE
+
         loginViewModel.loginById(request).observe(this, Observer {
             if (it.response != null) {
                 val response = it.response as LoginResponse
+                if (response.success) {
+                    contatinProgresBarLogin.visibility = View.GONE
+                    nestedScrollViewLogin.showSnackbar(response.message.toString(), Snackbar.LENGTH_SHORT)
+                } else {
+                    contatinProgresBarLogin.visibility = View.GONE
+                    nestedScrollViewLogin.showSnackbar(response.message.toString(), Snackbar.LENGTH_SHORT)
 
+                }
 
             }
 
@@ -64,17 +93,22 @@ class LoginFragment : Fragment(), NavController.OnDestinationChangedListener {
     }
 
     private fun submitForn() {
-        if (!validatephone()) {
-            return
-        }
+//        if (!validatephone()) {
+//            return
+//        }
+//
+//        if (!validatePassword()) {
+//            return
+//        }
+//
+//        if (validateDriverId()) {
+//            return
+//        }
+        mobieNo = editTestEmloyeeId.text.toString()
+        driverId = editTextMobileNo.text.toString()
+        password = editTextPassowrd.text.toString()
+        setUpObservers("9891088434", "", "#DI001", "12345", "28.6623", " 77.1411", "123456", Locale.getDefault().language)
 
-        if (!validatePassword()) {
-            return
-        }
-
-        if (validateDriverId()) {
-            return
-        }
     }
 
     private fun validatephone(): Boolean {
@@ -138,7 +172,6 @@ class LoginFragment : Fragment(), NavController.OnDestinationChangedListener {
             destination: NavDestination,
             arguments: Bundle?
     ) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
 
